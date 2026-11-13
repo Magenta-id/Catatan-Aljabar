@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catatan Aljabar Dasar</title>
+
+    <!-- Konfigurasi & Library MathJax -->
+    <script>
+      window.MathJax = {
+        loader: { load: ['[tex]/color'] },
+        tex: {
+          packages: { '[+]': ['color'] },
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://tikzjax.com/v1/tikzjax.css" />
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+  </head>
+
+  <body>
+    <main>
+      <section id="pengantar">
+        <p>Aljabar Adalah cabang matematika yang mempelajari simbol seperti huruf x, y, z, a, dan aturan untuk mengolah simbol tersebut.</p>
+        
+        <p>Sebagai permulaan, berikut adalah beberapa poin penting yang akan kita pelajari:</p>
+
+        <nav>
+          <div class="daftar-isi">
+            <h3 class="daftar-isi">📌 Daftar Isi Artikel</h3>
+            <ol>
+              <li><a href="#tujuan">Tujuan Aljabar</a></li>
+              <li><a href="#unsur">Unsur-Unsur dalam Aljabar</a></li>
+              <li><a href="#jenis">Jenis - Jenis Operasi Aljabar</a></li>
+              <li><a href="#sifat">Sifat - sifat Aljabar</a></li>
+              <li><a href="#identitas">Identitas Aljabar</a></li>
+              <li><a href="#pemfaktoran">Pemfaktoran Aljabar</a></li>
+            </ol>
+          </div>
+        </nav>
+
+        <!-- Tombol Melayang Ke Atas -->
+        <button id="btnBackToTop" title="Kembali ke atas" aria-label="Kembali ke atas">
+        ▲
+        </button>        
+      </section>
+
+      <section id="tujuan">
+        <h2 class="judul_Materi">1. Tujuan Aljabar</h2>
+
+        <ul>
+          <li><strong>Menyelesaikan nilai yang belum diketahui</strong>
+            <br>Contoh: Kita akan mencari nilai \(x\) 
+              \[ 
+                \begin{align*} 
+                  x \; {\color{#e41b17}{+ \; 5}} &amp;= 12 \\ 
+                  x &amp;= 12 \; {\color {#e41b17}{- \; 5}} \\
+                  x &amp;= 7 
+                \end{align*} 
+              \]</li>
+          <li><strong>Menyederhanakan bentuk matematika</strong>
+            <br>Contoh: \( 2x + 5x = 7x \)</li>
+          <li><strong>Membuat model matematika dari permasalahan sehari-hari</strong>
+            <br>Contoh: Menghitung harga barang, kecepatan, umur, dan lain-lain.</li>
+          <li><strong>Menghitung hubungan antara berbagai besaran</strong>
+            <br>Contoh: Hubungan jarak, waktu, dan kecepatan memakai aljabar.</li>
+        </ul>
+      </section>
+
+      <section id="unsur">
+        <h2 class="judul_Materi">2. Unsur-Unsur dalam Aljabar</h2>
+
+        <ul>
+          <li><strong>Variabel</strong>
+            <br>Huruf atau simbol yang mewakili angka yang belum diketahui.
+            <br>Contoh: \( x, y, a, b \)
+          </li>
+          <li><strong>Konstanta</strong>
+            <br>Angka tetap (nilainya tidak berubah).
+            <br>Contoh: \( 2, 5, 10 \)
+          </li>
+          <li><strong>Koefisien</strong>
+            <br>Angka yang berada di depan variabel.
+            <br>Contoh: Pada \( 4x \), koefisiennya adalah 4.
+          </li>
+          <li><strong>Suku (Term)</strong>
+            <br>Bagian dari bentuk aljabar yang dipisahkan oleh tanda penjumlahan (\(+\)) atau pengurangan (\(-\)).
+            <br>Contoh: \( 3x + 5y - 7 \) memiliki 3 suku, yaitu \( 3x \), \( 5y \), dan \( -7 \).
+          </li>
+        </ul>
+      </section>
+
+      <section id="jenis">
+        <h2 class="judul_Materi">3. Jenis - Jenis Operasi Aljabar</h2>
+
+        <p>Operasi aljabar sama saja dengan matematika biasa (tambah (+), kurang (-), kali (×), bagi(÷)). Bedanya, untuk <em>penjumlahan</em> dan <em>pengurangan</em>, kita hanya bisa menghitung angka dari variabel yang sejenis.</p>
+
+        <ul>
+          <li><strong>Penjumlahan dan Pengurangan</strong>
+            <br>Hanya bisa pada Variabel sejenis.
+            <br>Contoh:
+              \[ 
+                \begin{align*}
+                  2x + 6x &amp;= 8x \\
+                  8y - 3y &amp;= 5y \\
+                  6x + 4x - 5x &amp;= 5x
+                \end{align*} 
+              \]
+
+            <div class="warning">
+              <div class="warning-container">
+                <div class="warning-icon-wrapper">
+                  <span class="warning-icon">⚠️</span>
+                </div>
+                <div class="warning-content">
+                  <span class="warning-title">perhatian</span>
+                  <p class="warning-text">
+                    \[ 
+                      \begin{align*}
+                        4x + 3y &amp;= 4x + 3y \\
+                        4x + 3y &amp;≠ 7xy \\
+                        6x - 3y &amp;≠ 3
+                      \end{align*} 
+                    \]
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><strong>Perkalian</strong>
+            <br>Mengalikan angka dan variabel bersamaan.
+            <br>Contoh:
+              \[ 
+                \begin{align*}
+                  3x \times 2y &amp;= 6xy \\
+                  5x \times 3y \times 2z &amp;= 30xyz
+                \end{align*} 
+              \]
+          </li>
+          <li><strong>Pembagian</strong>
+            <br>Jika ada satu variabel, hanya angka yang dibagi. Jika ada variabel, maka variabelnya pun dibagi.
+            <br>Contoh:
+              \[ 
+                \begin{align*}
+                  6x \div 3 &amp;= 2x \\
+                  12x \div 3x &amp;= 4 \\
+                  10x \div 5y &amp;= 2 \times \frac{x}{y}
+                \end{align*} 
+              \]
+          </li>
+        </ul>
+      </section>
+
+      <section id="sifat">
+        <h2 class="judul_Materi">4. Sifat-sifat Aljabar</h2>
+
+        <ul>
+          <li><strong>Sifat Komutatif (Pertukaran)</strong>
+            <br>Sifat komutatif adalah <em>sifat operasi hitung yang menunjukkan bahwa pertukaran urutan dua elemen tidak akan mengubah hasil akhirnya.</em> Sifat ini hanya berlaku untuk penjumlahan dan perkalian. 
+            <br>Contoh:
+              \[ 
+                \begin{align*}
+                  5 + 3 &amp;= 3 + 5 \\
+                  4 \times 2 &amp;= 2 ×\times 4 \\
+                  2 \times 3 + 5 &amp;= 5 + 3 \times 2
+                \end{align*} 
+              \]
+
+            <div class="warning">
+              <div class="warning-container">
+                <div class="warning-icon-wrapper">
+                  <span class="warning-icon">⚠️</span>
+                </div>
+                <div class="warning-content">
+                  <span class="warning-title">perhatian</span>
+                  <p class="warning-text">
+                    \[ 
+                      \begin{align*}
+                        4 - 2 &amp;≠ 2 - 4 \\
+               \frac{6}{3} &amp;≠ \frac{3}{6} \\
+    5 - \frac {3}{6} &amp;≠ \frac{6}{3} - 5
+      \end{align*} \]
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+
+<h2 id="sifat" style="color: black; text-align: left; sans-serif; font-weight: 700; color: #0f172a; border-left: 5px solid #0284c7; padding-left: 12px; margin-top: 30px;">D. Sifat - sifat Aljabar</h2>
+
+<ol>
+  
+    
+    <div style="background-color: #fffbeb; border-color: rgb(253, 230, 138) rgb(253, 230, 138) rgb(253, 230, 138) rgb(217, 119, 6); border-image: none; border-left: 5px solid #d97706; border-radius: 6px; border-style: solid; border-width: 1px 1px 1px 5px; border: 1px solid rgb(253, 230, 138); font-family: Poppins, sans-serif; margin: 20px 0px; padding: 14px 16px;">
+  <strong style="color: #b45309; display: block; font-size: 15px; margin-bottom: 4px;">⚠️ HATI-HATI:</strong>
+  <span style="color: #92400e; font-size: 14px;"></span>
+</div>
+  
+  
+  <li style="text-align: justify;"><strong>Sifat Asosiatif</strong><br />Sifat ini menyatakan bahwa perubahan pengelompokan (posisi tanda kurung) dari tiga elemen atau lebih tidak akan mengubah hasil akhir. Sifat ini hanya berlaku untuk penjumlahan dan perkalian.<br />Contoh:
+    \[ \begin{align*}
+    2 + (3 + 4) &amp;= (2 + 3) + 4 \\
+    (1 × 2) × 5 &amp;= 1 × (2 × 5) \\
+    \end{align*} \]
+    
+    <div style="background-color: #fffbeb; border-color: rgb(253, 230, 138) rgb(253, 230, 138) rgb(253, 230, 138) rgb(217, 119, 6); border-image: none; border-left: 5px solid #d97706; border-radius: 6px; border-style: solid; border-width: 1px 1px 1px 5px; border: 1px solid rgb(253, 230, 138); font-family: Poppins, sans-serif; margin: 20px 0px; padding: 14px 16px;">
+  <strong style="color: #b45309; display: block; font-size: 15px; margin-bottom: 4px;">⚠️ HATI-HATI:</strong>
+  <span style="color: #92400e; font-size: 14px;">\[ \begin{align*}
+      (5 - 3) - 2 &amp;≠ 5 - (3 - 2) \\
+      \frac{({\frac{8}{4}})}{2} &amp;≠ \frac{8}{({\frac{4}{2}})} \\
+    6x - 3y &amp;≠ 3
+      \end{align*} \]</span>
+</div>
+   </li>
+  
+  <li style="text-align: justify;"><strong>Sifat Distributif</strong><br />Sifat ini menggabungkan dua operasi hitung yang berbeda (biasanya perkalian terhadap penjumlahan atau pengurangan). Angka di luar tanda kurung dikalikan satu per satu ke setiap angka di dalam tanda kurung.<br />Contoh:
+    \[ \begin{align*}
+    3 × (4 + 5) &amp;= (3 × 4) + (3 × 5) \\
+    3 × (4 + 5) &amp;= 12 + 15 \\
+    3 × (4 + 5) &amp;= \mathbf{27}
+    \end{align*} \]
+    \[ \begin{align*}
+    2 × (x - y) &amp;= (2 × x) - (2 × y) \\
+    2 × (x - y) &amp;= \mathbf{2x - 2y}
+    \end{align*} \]
+    \[ \begin{align*}
+    4x × (x + 2 - y) &amp;= (4x × x) + (4x × 2) - (4x × y) \\
+    4x × (x + 2 - y) &amp;= \mathbf{4x^2 + 8x - 4xy}
+    \end{align*} \]
+    </li>
+  
+    <li style="text-align: justify;"><strong>Sifat Identitas</strong><br />Sifat identitas aljabar adalah aturan dalam aljabar di mana suatu operasi yang dikenakan pada suatu bilangan dengan bilangan identitas akan menghasilkan bilangan itu sendiri.<br />Contoh: 
+      \[ \begin{align*}
+      a × 1 &amp;= a \\
+      7 + 0 &amp;= 7 \\
+      3y × 1 = 3y
+      \end{align*} \]
+    </li>
+  
+    <li style="text-align: justify;"><strong>Sifat Invers</strong><br />Sifat invers (kebalikan) dalam aljabar adalah aturan di mana suatu bilangan jika dioperasikan dengan bilangan inversnya akan menghasilkan <b>Elemen identitas</b>.<br />Contoh:
+      \[ \begin{align*}
+      6 + (-6) &amp;= 0 \\
+      -3x + 3x &amp;= 0 \\
+      \frac {3}{2} × \frac {2}{3} &amp;= 1
+      \end{align*} \]
+      
+      <div style="background-color: #fafafa; border-radius: 8px; border: 2px dashed rgb(203, 213, 225); font-family: Poppins, sans-serif; margin: 20px 0px; padding: 14px 18px;">
+  <strong style="color: #000; display: block; font-size: 15px; margin-bottom: 4px;">📝 Elemen Identitas:</strong>
+  <span style="color: #334155; font-size: 14px;">Elemen identitas itu ibarat "angka netral" dalam matematika.<br />Jika kamu mengoperasikan angka apa pun dengan elemen identitas, angka tersebut <b>tidak akan berubah sama sekali</b> (nilainya tetap sama seperti identitas aslinya).<br />Contoh:
+    \[ \begin{align*}
+    7 + \mathbf{0} &amp;= 7 \\
+    -15 × \mathbf{1} &amp;= -15 \\
+    x × \mathbf{1} &amp;= x
+    \end{align*} \] </span>
+      </div>
+    </li>
+  
+    <li><strong>Sifat Nol</strong><br /><div style="text-align: justify;">Sifat Nol (sering disebut Sifat Perkalian dengan Nol) adalah aturan dalam aljabar yang menyatakan bahwa bilangan apa pun jika dikalikan dengan nol, hasilnya akan selalu nol.</div>Contoh: 
+      \[ \begin{align*}
+      12 × 0 &amp;= 0 \\
+      a × 0 &amp;= 0 \\
+      ab × 0 &amp;= 0
+      \end{align*} \]
+      
+<div style="background-color: #fafafa; border-radius: 8px; border: 2px dashed rgb(203, 213, 225); font-family: Poppins, sans-serif; margin: 20px 0px; padding: 14px 18px;">
+  <strong style="color: #000; display: block; font-size: 15px; margin-bottom: 4px;">Sifat Nol vs Sifat Identitas</strong>
+  <span style="color: #334155; font-size: 14px;">
+    
+    <!--Pembungkus scroll horisontal disisipkan di sini-->
+    <div style="-webkit-overflow-scrolling: touch; overflow-x: auto;">
+      <table style="border-collapse: collapse; font-size: 15px; margin: 20px 0px; min-width: 500px; width: 100%;">
+        <thead>
+          <tr style="background-color: #f8fafc; border-bottom: 2px solid rgb(226, 232, 240);">
+            <th style="padding: 10px; text-align: left; white-space: nowrap;">Operasi</th>
+            <th style="padding: 10px; text-align: left;">Peran Angka 0</th>
+            <th style="padding: 10px; text-align: center; white-space: nowrap;">Hasil</th>
+            <th style="padding: 10px; text-align: left; white-space: nowrap;">Nama</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid rgb(226, 232, 240);">
+            <td style="padding: 10px; white-space: nowrap;">Penjumlahan (\(a + 0\))</td>
+            <td style="padding: 10px;">Tidak mengubah apa-apa</td>
+            <td style="padding: 10px; text-align: center;">\(a\)</td>
+            <td style="padding: 10px; white-space: nowrap;">Sifat identitas</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgb(226, 232, 240);">
+            <td style="padding: 10px; white-space: nowrap;">Perkalian (\(a \times 0\))</td>
+            <td style="padding: 10px;">Mengubah semua menjadi nol</td>
+            <td style="padding: 10px; text-align: center;">\(0\)</td>
+            <td style="padding: 10px; white-space: nowrap;">Sifat Nol</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+  </span>
+</div>
+  </li>
+  
+  <li><strong>Sifat Pembagian</strong><br /><div style="text-align: justify;">Sifat pembagian aljabar adalah aturan atau prinsip dasar matematika yang digunakan untuk menyederhanakan dan menyelesaikan operasi pembagian pada bentuk aljabar (yang melibatkan variabel, koefisien, dan eksponen/pangkat).</div><div style="text-align: justify;">Secara umum, operasi pembagian aljabar dilakukan dengan membagi koefisien dengan koefisien dan variabel sejenis dengan variabel sejenis menggunakan aturan eksponen.</div>contoh
+    
+    \[ \begin{align*}
+    \frac{x^5}{x^2} &amp;= x^{5-2} = x^3 \\
+    \frac{12x^6}{4x^2} &amp;= (\frac{12}{4}) x^{6-2} = 3x^4 \\
+    \frac{6x^3 + 9x^2}{3x} &amp;= \frac{6x^3}{3x} + \frac{9x^2}{3x} = 2x^2 + 3x \\
+    \frac{x^2}{x^5} &amp;= x^{2-5} = x^{-3} = \frac{1}{x^3}
+    \end{align*} \]
+
+</li></ol>
+
+<h2 id="identitas" style="color: black; text-align: left; sans-serif; font-weight: 700; color: #0f172a; border-left: 5px solid #0284c7; padding-left: 12px; margin-top: 30px;">E. Identitas Aljabar</h2>
+
+<p style="text-align: justify;">Identitas aljabar adalah persamaan matematika yang selalu bernilai benar untuk setiap nilai variabel di dalamnya. Persamaan-persamaan ini sering digunakan untuk menyederhanakan bentuk aljabar, memfaktorkan, atau menyelesaikan persamaan yang lebih rumit.</p>
+
+<ol>
+  <li>
+<strong>Identitas Derajat Dua (Kuadrat)</strong>
+
+\[ \begin{align*}
+(a + b)^2 &amp;= a^2 + 2ab + b^2 \\
+(a - b)^2 &amp;= a^2 - 2ab + b^2 \\
+a^2 - b^2 &amp;= (a + b) (a - b) \\
+(x + a) (x + b) &amp;= x^2 (a + b)x + ab \\
+(a + b + c) ^2 &amp;= a^2 + b^2 + c^2 + 2ab + 2bc + 2ca
+\end{align*} \]
+  </li>
+    
+  <li>
+<strong>Identitas Derajat Tiga</strong>
+\[ \begin{align*}
+(a + b)^3 &amp;= a^3 + 3a^2b + 3ab^2 + 3b^3 = a^3 + b^3 + 3ab(a + b) \\
+(a - b)^3 &amp;= a^3 - 3a^2b + 3ab^2 - 3b^3 = a^3 - b^3 - 3ab(a - b) \\
+a^3 + b^3 &amp;= (a + b) (a^2 - ab + b^2) \\
+a^3 - b^3 &amp;= (a - b) (a^2 + ab + b^2) \\
+a^3 + b^3 + c^3 -3abc &amp;= (a + b + c) (a^2 + b^2 + c^2 - ab - bc - ca)
+\end{align*} \]
+</li>
+  </ol>
+<div style="background-color: #fafafa; border-radius: 8px; border: 2px dashed rgb(203, 213, 225); font-family: Poppins, sans-serif; margin: 20px 0px; padding: 14px 18px;">
+  <strong style="color: #000; display: block; font-size: 15px; margin-bottom: 4px;">📝 CATATAN:</strong>
+  <span style="color: #334155; font-size: 14px;"><div style="text-align: justify;">Selain rumus - rumus utama tadi, masih banyak rumus identitas aljabar lain yang sebenarnya tidak perlu dihafal,  cukup gunakan manipulasi aljabar: contoh untuk mendapat nilai \(a^2 + b^2\) didapatkan dari rumus
+\((a + b)\)^2 :
+    \[ \begin{align*}
+    (a + b)^2 &amp;= a^2 {\color {#e41b17}{+ 2ab}} + b^2 \\
+    (a + b)^2 {\color {#e41b17}{- 2ab}} &amp;= a^2 + b^2
+    \end {align*} \]</div><div style="text-align: justify;"><i>Untuk informasi lebih jelas tentang bagaimana cara menggunakan manipulasi aljabar bisa cek di <a href="https://binderkedua.blogspot.com/2026/09/keajaiban-pindah-ruas-trik-aljabar.html"> "Keajaiban Pindah Ruas: Trik Aljabar Paling Underrated di Sains"</a>.</i></div></span></div>
+
+<h2 id="pemfaktoran" style="color: black; sans-serif; font-weight: 700; color: #0f172a; border-left: 5px solid #0284c7; padding-left: 12px; margin-top: 30px;">F. Pemfaktoran Aljabar</h2>
+<p style=" text-align: justify;">Pemfaktoran aljabar adalah proses mengubah bentuk penjumlahan / pengurangan suku-suku aljabar menjadi bentuk perkalian faktor-faktornya.</p>
+
+<ol>
+  <li style="text-align: justify;"><strong>Pemfaktoran FPB (Sifat Distributif)</strong><br />Metode paling dasar dengan mengeluarkan Faktor Persekutuan Terbesar (FPB) dari setiap suku.<br />Bentuk Umum:
+    \[ \begin{align*}
+    ax + ay &amp;= a(x + y) \\
+    ax - ay &amp;= a(x - y) \\
+    \end{align*} \]
+Contoh:
+    \[ \begin{align*}
+    8x + 12 &amp;= 4(2x + 3) \\
+    6x^2 + 9x &amp;= 3x(2x + 3) \\
+    15x^2y + 20xy^3 &amp;= 5xy(3x + 4y^2) \\
+    \end{align*} \]
+    
+    <div style="background-color: #fafafa; border-radius: 8px; border: 2px dashed rgb(203, 213, 225); font-family: Poppins, sans-serif; margin: 20px 0px; padding: 14px 18px;">
+  <strong style="color: #000; display: block; font-size: 15px; margin-bottom: 4px;"> 💡 Catatan Ringkas FPB:</strong>
+  <span style="color: #334155; font-size: 14px;">
+    
+<table style="border-collapse: collapse; border-color: currentcolor; border-image: none; border-style: none; border-width: medium; border: none; width: 100%;">
+  <tbody><tr>
+    <td style="padding: 2px 0px; vertical-align: top; width: 60px;">Angka</td>
+    <td style="padding: 2px 0px; text-align: center; vertical-align: top; width: 15px;">:</td>
+    <td style="padding: 2px 0px; vertical-align: top;">Cari FPB koefisien (cth: 8 &amp; 12 → 4)</td>
+  </tr>
+  <tr>
+    <td style="padding: 2px 0px; vertical-align: top; width: 60px;">Huruf</td>
+    <td style="padding: 2px 0px; text-align: center; vertical-align: top; width: 15px;">:</td>
+    <td style="padding: 2px 0px; vertical-align: top;">Ambil variabel sama pangkat <b>terendah</b></td>
+  </tr>
+</tbody></table></span></div>
+    </li>
+  
+    <li style="text-align: justify;"><strong>Pemfaktoran Selisih Dua Kuadrat</strong><br />Digunakan jika ada dua suku kuadrat yang dipisahkan oleh tanda kurang.<br />Bentuk Umum: \[ (a^2 + b^2) = (a + b) (a - b) \] Contoh: \[ \begin{align*}
+      x^2 - 9 &amp;= (x - 3) (x + 3) \\
+      x^2 - 25 &amp;= (x - 5) (x + 5) \\
+      25y^2 - 4 &amp;= (5y - 2) (5y + 2) 
+      \end {align*} \]
+    </li>
+  
+    <li><strong>Pemfaktoran Persamaan Kuadrat \(\mathbf{(ax^2 + bx + c)}\)</strong><br />Pemfaktoran ini dibagi menjadi dua bagian<br />
+    <ul>
+      <li><strong>Bentuk Khusus: Kuadrat Sempurna</strong><br />
+Memfaktorkan persamaan kuadrat yang menghasilkan dua faktor identik.<br />Bentuk Umum: \[ \begin{align*}
+      a^2 + 2ab + b^2 &amp;= (a + b)^2 \\
+      a^2 - 2ab + b^2 &amp;= (a - b)^2
+      \end{align*} \]
+Contoh: \[ \begin{align*}
+      x^2 + 6x + 9 &amp;= (x + 3)^2 \\
+      4x^2 - 12x + 9 &amp;= (2x - 3)^2 
+      \end{align*} \]
+      </li>
+      
+      <li style="text-align: justify;"><strong>\(\mathbf{a = 1}\) dan \(\mathbf{a ≠ 1}\)</strong><br />Untuk \(\mathbf{a = 1}\) \(\mathbf{(x^2 + bx + c)}\) cari dua bilang \(p\) dan \(q\) yang memenuhi: \[ \begin{align*}
+        p + q &amp;= b \\
+        p × q &amp;= c
+        \end {align*} \]
+Bentuk Pemfaktoran:
+        \[ (x + p) (x + q) \]
+        Contoh: \( x^2 + 7x + 12 \) <br /> - Cari dua angka yang jika dikalikan hasilnya \(12 (c)\) dan jika dijumlahkan hasilnya \(7 (b)\). <br />
+- Angka yang memenuhi adalah \(3\) dan \(4\) (karena \(3 \times 4 = 12\) dan \(3 + 4 = 7)\).<br />- Bentuk pemfaktorannya: \[ x^2 + 7x + 12 = \mathbf({x + 3) (x + 4)} \]
+        
+<br />
+        Untuk \(\mathbf{a ≠ 1 (ax^2 + bx + c)}\) <br />
+Cari dua bilangan p dan q yang memenuhi: \[ \begin{align*}
+        p + q &amp;= b \\
+        p × q &amp;= a × c
+        \end{align*} \]
+Bentuk Pemfaktoran: \[ \frac{(ax + p) (ax + q)}{a} \]
+Contoh: \(3x^2 - 5x - 2\) 
+- Cari dua angka yang jika dikali hasilnya \(a × c = -6\) dan jika dijumlah \(-5\). Angkanya adalah 1 dan -6.<br />- Masukkan ke rumus dan bagi dengan a (yaitu 3):
+        \[ \frac{(3x + 1) (3x - 6)}{3} = (3x + 1) (3x - 2) \]
+        </li> </ul>
+   </li><li><strong>Pemfaktoran Pengelompokan Suku</strong><br />Digunakan untuk bentuk aljabar 4 suku atau lebih dengan mengelompokkan suku-suku yang memiliki FPB.<br />Bentuk Umum:
+  \[ ax + ay + bx + by = a(x + y) b(x + y) = (a + b) (x + y) \]
+  Contoh: \[ \begin {align*}
+  x^3 + 2x^2 + 3x + 6 &amp;= x^2(x + 2) + 3(x + 2) = \mathbf{(x^2 + 3) (x + 2)}\\
+     2x^3 - 4x^2 - 3x + 6 &amp;= 2x^2(x - 2) - 3(x - 2) = mathbf{(2x^2 - 3) (x - 2)} 
+     \end{align*} \]
+  </li>
+      
+  <li><strong>Pemfaktoran Selisih dan Jumlah Dua Kubik</strong><br />Digunakan khusus untuk memfaktorkan bentuk aljabar dua suku berpangkat tiga \((x^3)\).<br />Bentuk Umum:
+    \[ \begin{align*}
+    a^3 - b^3 &amp;= (a - b) (a^2 - ab + b^2) \\
+    a^3 + b^3 &amp;= (a + b) (a^2 - ab + b^2)
+    \end{align*} \]
+      
+   <div style="background-color: #fafafa; border-radius: 8px; border: 2px dashed rgb(203, 213, 225); font-family: Poppins, sans-serif; margin: 20px 0px; padding: 14px 18px;">
+  <strong style="color: #000; display: block; font-size: 15px; margin-bottom: 4px;">Tips menghafal tanda (±):</strong>
+  <span style="color: #334155; font-size: 14px;">Gunakan aturan SOAP:
+    <ul>
+      <li><b>S</b>ame (Tanda di kurung pertama sama dengan soal).</li>
+      <li><b>O</b>pposite (Tanda depan ab berlawanan dengan soal).</li>
+      <li><b>A</b>lways Positive (Tanda suku terakhir selalu positif).</li>
+    </ul>
+    </span></div>
+    
+    Contoh: \(x^3 + 8\) 
+    \[ \begin{align*}
+    x^3 + 8 &amp;= x^3 + 2^3 \rightarrow a = x, b = 2 \\
+    x^3 + 8 &amp;= (x + 2) (x^2 - 2x + 4)
+    \end {align*} \]
+    </li></ol>
+   
+​<div style="background-color: #f9f9f9; border-left: 4px solid rgb(51, 51, 51); margin: 20px 0px; ;padding: 12px 16px;">
+<strong style="color: #000;">💡 Catatan Penting:</strong><br />
+<p lang="id" style="text-align:justify;">Kunci utama dari aljabar bukan menghafal rumus-rumus pemfaktoran di atas, melainkan memahami <strong>pola dan sifat manipulasinya</strong>. Jika kamu mengalami kesulitan di materi sekolah, biasanya masalahnya bukan di soal tersebut, melainkan operasi dasar aljabar yang perlu diperkuat kembali.</p>
+</div>
+
+<h2 id="pisah-digit" style="border-left: 5px solid rgb(2, 132, 199); color: #0f172a; font-family: Poppins, sans-serif; font-weight: 700; margin-top: 30px; padding-left: 12px; text-align: justify;">Penutup</h2>
+
+<p style="text-align: justify;">Nah, itu dia dasar-dasar aljabar yang wajib kamu kuasai! Tapi, buat apa sih semua variabel dan operasi ini? Jawabannya ada pada persamaan matematika.</p>
+
+<p style="text-align: justify;">Di pembahasan selanjutnya, kita akan mengintip konsep PLSV, PLDV, dan PLTV sebagai jembatan sebelum masuk ke penyelesaian sistem persamaannya.<a href="https://binderkedua.blogspot.com/2026/09/memahami-persamaan-linear-dari-satu-dua.html"><i>" Memahami Persamaan Linear: Dari Satu, Dua, hingga Tiga Variabel (PLSV, PLDV, & PLTV) "</i></a></p>
+<p>Selamat belajar!</p>
+
+
+    
+    <script src="./script.js"></script>
+  </body>
+</html>
