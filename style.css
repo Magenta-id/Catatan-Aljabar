@@ -3,7 +3,7 @@
 /* 1. Pengaturan dasar untuk semua MathJax (tanpa paksa scroll box untuk inline) */
 mjx-container {
     box-sizing: border-box !important;
-    color: #000;
+    color: #334155;
 }
 
 /* 2. KHUSUS RUMUS PANJANG / DISPLAY (Berdiri sendiri / Block mode) */
@@ -26,7 +26,7 @@ mjx-container[display] svg {
 
 /* Mengubah warna teks dasar MathJax menjadi hitam */
 mjx-container, mjx-math, mjx-mrow {
-    color: #000;
+    color: #334155;
 }
 
 /* Batas */
@@ -37,10 +37,38 @@ body {
   font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
+    background-color: #f8fafc; /* Abu-abu sangat muda / off-white */
+    color: #334155;
 }
 
-p, li, h1, h2, h3, h4, h5, h6 {
-    color: #000;
+/*Mengatur Kontainer Artikel agar Berada di Tengah & Nyaman Dibaca */
+/* Ganti .post-body menjadi main */
+main {
+    max-width: 42rem;   /* Membatasi lebar teks agar nyaman dibaca mata */
+    margin: 2rem auto;  /* Otomatis di tengah secara horizontal */
+    padding: 2rem 1.5rem; 
+    background-color: #ffffff; /* Warna putih bersih khusus lembar bacaan */
+    border-radius: 12px;       /* Sudut melengkung modern */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); /* Bayangan tipis halus */
+}
+
+/* Aturan utama untuk semua heading di dalam area konten utama (main) */
+main h2, main h3, main h4, main h5, main h6 {
+    color: #1e293b; 
+}
+
+/* Pengaturan ukuran dan jarak untuk H2 */
+main h2 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Pengaturan ukuran dan jarak untuk H3 */
+main h3 {
+    font-size: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
 }
 
 /* Styling Tombol Melayang Back to Top */
@@ -75,7 +103,7 @@ p, li, h1, h2, h3, h4, h5, h6 {
 
 p { font-size: 1rem; }
 
-h2 {
+/*h2 {
   font-size: 1.5rem;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
@@ -85,7 +113,7 @@ h3 {
   font-size: 1.25rem;
   margin-top: 1.25rem;
   margin-bottom: 0.5rem;
-}
+}*/
 
 /* Daftar isi */
 .daftar-isi {
@@ -138,19 +166,21 @@ h3.daftar-isi {
 /* Batas */
 
 .judul_Materi {
-  position: relative;
-  padding-bottom: 10px;
-  width: fit-content;
+    position: relative;
+    padding-bottom: 10px;
+    width: fit-content;
+    color: #1e293b; 
 }
+
 .judul_Materi::before {
-  background: linear-gradient(135deg, #0909FF, #F70D1A);
-  border-radius: 3px;
-  bottom: 0;
-  content: '';
-  height: 5px;
-  left: 0;
-  position: absolute;
-  width: calc(100% + 20px);
+    background: linear-gradient(135deg, #0909FF, #F70D1A);
+    border-radius: 3px;
+    bottom: 0;
+    content: '';
+    height: 5px;
+    left: 0;
+    position: absolute;
+    width: calc(100% + 20px);
 }
 
 /* Batas */
@@ -395,6 +425,54 @@ h3.catatan {
 
 /* Batas */
 
+.soft-note {
+  width: 100%;
+  max-width: 35rem;
+  margin: auto; /* Posisi otomatis di tengah jika di dalam flex/grid parent */
+  
+  /* Palet warna lembut (pastel sage/cream) */
+  background-color: #f7f9f6;
+  border: 1px solid #e2e8df;
+  border-left: 4px solid #a3b899; /* Aksen hijau sage lembut di kiri */
+  border-radius: 1rem;
+  
+  /* Bayangan sangat tipis dan halus */
+  box-shadow: 0 4px 20px -2px rgba(163, 184, 153, 0.12);
+  padding: 1.75rem;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.soft-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.soft-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #708268;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.soft-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #b5c4ad;
+  border-radius: 50%;
+}
+
+.soft-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4a5247; /* Warna teks abu-kehijauan yang lembut di mata */
+}
+
+
 /*Yang diatas wajib ada ya!! */
 
 .pohon-faktor {
@@ -553,4 +631,29 @@ h3.catatan {
   padding: 4px 10px;
   border-radius: 9999px;
   display: inline-block;
+}
+
+/* Batas */
+.info-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.info-table td {
+  padding: 2px 0px;
+  vertical-align: top;
+}
+
+.info-table .label {
+  width: 60px;
+}
+
+.info-table .separator {
+  text-align: center;
+  width: 15px;
+}
+
+/* Batas */
+#pemfaktoran ul ol li::marker {
+  font-weight: bold;
 }
