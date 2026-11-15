@@ -42,14 +42,13 @@ body {
 }
 
 /*Mengatur Kontainer Artikel agar Berada di Tengah & Nyaman Dibaca */
-/* Ganti .post-body menjadi main */
 main {
-    max-width: 42rem;   /* Membatasi lebar teks agar nyaman dibaca mata */
-    margin: 2rem auto;  /* Otomatis di tengah secara horizontal */
-    padding: 2rem 1.5rem; 
-    background-color: #ffffff; /* Warna putih bersih khusus lembar bacaan */
-    border-radius: 12px;       /* Sudut melengkung modern */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); /* Bayangan tipis halus */
+    max-width: 42rem;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    background-color: transparent; /* Hilangkan kotak putih */
+    box-shadow: none;              /* Hilangkan bayangan */
+    border-radius: 0;
 }
 
 /* Aturan utama untuk semua heading di dalam area konten utama (main) */
