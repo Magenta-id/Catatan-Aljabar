@@ -33,41 +33,10 @@ mjx-container, mjx-math, mjx-mrow {
 
 html { scroll-behavior: smooth; }
 
-/* 1. Seragamkan background body dan area utama menjadi putih bersih atau abu-abu muda yang sama */
 body {
-    background-color: #ffffff; /* Ubah background luar menjadi putih bersih */
     color: #334155;
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-}
-
-/* 2. Pastikan kontainer utama benar-benar transparan tanpa bayangan */
-main {
-    max-width: 42rem;   /* Membatasi lebar teks agar nyaman dibaca */
-    margin: 2rem auto;  /* Posisi di tengah secara horizontal */
-    padding: 0 1.5rem;  
-    background-color: transparent; /* Transparan total */
-    box-shadow: none;              /* Tanpa bayangan kotak */
-    border-radius: 0;
-}
-
-/* Aturan utama untuk semua heading di dalam area konten utama (main) */
-main h2, main h3, main h4, main h5, main h6 {
-    color: #1e293b; 
-}
-
-/* Pengaturan ukuran dan jarak untuk H2 */
-main h2 {
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-}
-
-/* Pengaturan ukuran dan jarak untuk H3 */
-main h3 {
-    font-size: 1.25rem;
-    margin-top: 1.25rem;
-    margin-bottom: 0.5rem;
 }
 
 /* Styling Tombol Melayang Back to Top */
